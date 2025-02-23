@@ -15,7 +15,8 @@
 		"server-test:sqlite": "DB_TYPE=sqlite tsx watch server/server.ts",
 		"server-generate-migrations": "DB_TYPE=pg drizzle-kit generate && DB_TYPE=mysql drizzle-kit generate && DB_TYPE=sqlite drizzle-kit generate",
 		"test-generate-migrations": "DB_TYPE=pg drizzle-kit generate --config=./drizzle.test-config.ts && DB_TYPE=mysql drizzle-kit generate --config=./drizzle.test-config.ts && DB_TYPE=sqlite drizzle-kit generate --config=./drizzle.test-config.ts",
-		"lint": "dprint check --list-different"
+		"lint": "dprint check --list-different",
+		"postinstall": "pnpm build"
 	},
 	"exports": {
 		".": {
