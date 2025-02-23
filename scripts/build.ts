@@ -10,6 +10,7 @@ await build({
 	sourcemap: true,
 	dts: true,
 	format: ['cjs', 'esm'],
+	tsconfig: './tsconfig.json',
 	outExtension(ctx) {
 		if (ctx.format === 'cjs') {
 			return {

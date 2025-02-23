@@ -15,20 +15,21 @@
 		"server-test:sqlite": "DB_TYPE=sqlite tsx watch server/server.ts",
 		"server-generate-migrations": "DB_TYPE=pg drizzle-kit generate && DB_TYPE=mysql drizzle-kit generate && DB_TYPE=sqlite drizzle-kit generate",
 		"test-generate-migrations": "DB_TYPE=pg drizzle-kit generate --config=./drizzle.test-config.ts && DB_TYPE=mysql drizzle-kit generate --config=./drizzle.test-config.ts && DB_TYPE=sqlite drizzle-kit generate --config=./drizzle.test-config.ts",
-		"lint": "dprint check --list-different"
+		"lint": "dprint check --list-different",
+		"prepare": "pnpm tsx scripts/build.ts"
 	},
 	"exports": {
 		".": {
 			"import": {
-				"types": "./dist/index.d.ts",
-				"default": "./dist/index.js"
+				"types": "./index.d.ts",
+				"default": "./index.js"
 			},
 			"require": {
-				"types": "./dist/index.d.cjs",
-				"default": "./dist/index.cjs"
+				"types": "./index.d.cjs",
+				"default": "./index.cjs"
 			},
-			"types": "./dist/index.d.ts",
-			"default": "./dist/index.js"
+			"types": "./index.d.ts",
+			"default": "./index.js"
 		}
 	},
 	"license": "Apache-2.0",
